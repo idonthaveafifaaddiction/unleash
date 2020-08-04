@@ -1,7 +1,7 @@
 {
   "name": "unleash-server",
   "description": "Unleash is an enterprise ready feature toggles service. It provides different strategies for handling feature toggles.",
-  "version": "3.4.0",
+  "version": "3.4.2",
   "keywords": [
     "unleash",
     "feature toggle",
@@ -62,7 +62,6 @@
     ]
   },
   "dependencies": {
-    "@hapi/joi": "^17.1.0",
     "async": "^3.1.0",
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.4",
@@ -75,7 +74,8 @@
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "gravatar-url": "^3.1.0",
-    "js-yaml": "^3.12.2",
+    "joi": "^17.1.1",
+    "js-yaml": "^3.14.0",
     "knex": "0.20.10",
     "log4js": "^6.0.0",
     "mime": "^2.4.2",
@@ -87,13 +87,13 @@
     "prom-client": "^12.0.0",
     "response-time": "^2.3.2",
     "serve-favicon": "^2.5.0",
-    "unleash-frontend": "3.3.5",
+    "unleash-frontend": "3.4.0",
     "yargs": "^15.1.0"
   },
   "devDependencies": {
     "@passport-next/passport": "^3.1.0",
     "@passport-next/passport-google-oauth2": "^1.0.0",
-    "@types/node": "^13.7.4",
+    "@types/node": "^14.0.0",
     "ava": "^3.7.0",
     "coveralls": "^3.1.0",
     "eslint": "^6.8.0",
