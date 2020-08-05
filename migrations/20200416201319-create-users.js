@@ -3,25 +3,23 @@
 'use strict';
 
 exports.up = function(db, cb) {
-    return db.createTable(
-        'users',
-        {
-            id: {
-                type: 'serial',
-                primaryKey: true,
-                notNull: true,
-                autoIncrement: true,
-            },
-            name: { type: 'string', length: 255 },
-            username: { type: 'string', length: 255, unique: true },
-            system_id: { type: 'string', length: 255 },
-            email: { type: 'string', length: 255, unique: true },
-            image_url: { type: 'string', length: 255 },
-            password_hash: { type: 'string', length: 255 },
-            login_attempts: { type: 'int', defaultValue: 0 },
-            created_at: { type: 'timestamp', defaultValue: 'now()' },
-            seen_at: { type: 'timestamp' },
-        },
+    db.runSql(
+        `
+        CREATE TABLE users
+        (
+            id             INTEGER AUTO_INCREMENT NOT NULL,
+            name           VARCHAR(255),
+            username       VARCHAR(255) UNIQUE,
+            system_id      VARCHAR(255),
+            email          VARCHAR(255) UNIQUE,
+            image_url      VARCHAR(255),
+            password_hash  VARCHAR(255),
+            login_attempts INTEGER   DEFAULT 0,
+            created_at     TIMESTAMP DEFAULT now(),
+            seen_at        TIMESTAMP,
+            CONSTRAINT users_pk PRIMARY KEY (id)
+        );
+    `,
         cb,
     );
 };

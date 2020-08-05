@@ -5,5 +5,5 @@ exports.up = function(db, callback) {
 };
 
 exports.down = function(db, callback) {
-    db.runSql('ALTER TABLE features DROP COLUMN "archived";', callback);
+    db.runSql('ALTER TABLE features DROP COLUMN archived;', callback);
 };

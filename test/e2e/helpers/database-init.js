@@ -64,6 +64,8 @@ module.exports = async function init(databaseSchema = 'test', getLogger) {
         databaseSchema,
         minPool: 1,
         maxPool: 1,
+        timezone: 'UTC',
+        dateStrings: true,
         getLogger,
     };
 

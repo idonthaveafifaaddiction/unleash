@@ -1,6 +1,7 @@
 CREATE TABLE migrations ( id SERIAL NOT NULL, name CHARACTER VARYING(255) NOT NULL, run_on TIMESTAMP(6) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY (id) );
 insert into migrations (id, name, run_on) values (1, '/20141020151056-initial-schema', '2016-12-23 10:08:28');
 insert into migrations (id, name, run_on) values (2, '/20141110144153-add-description-to-features', '2016-12-23 10:08:31');
+insert into migrations (id, name, run_on) values (2, '/20160618193924-add-strategies-to-features', '2016-12-23 10:08:31');
 insert into migrations (id, name, run_on) values (3, '/20141117200435-add-parameters-template-to-strategies', '2016-12-23 10:08:32');
 insert into migrations (id, name, run_on) values (4, '/20141117202209-insert-default-strategy', '2016-12-23 10:08:36');
 insert into migrations (id, name, run_on) values (5, '/20141118071458-default-strategy-event', '2016-12-23 10:10:35');

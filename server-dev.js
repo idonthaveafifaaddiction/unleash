@@ -4,10 +4,9 @@ const unleash = require('./lib/server-impl');
 
 unleash.start({
     db: {
-        user: 'unleash_user',
-        password: 'passord',
+        user: 'root',
         host: 'localhost',
-        port: 5432,
+        port: 3306,
         database: 'unleash',
         ssl: false,
     },

@@ -32,8 +32,6 @@ CREATE TABLE events (
 exports.down = function(db, callback) {
     db.runSql(
         `
-DROP TABLE events;
-DROP TABLE features;
 DROP TABLE strategies;
         `,
         callback,
