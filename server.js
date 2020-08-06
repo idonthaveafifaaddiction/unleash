@@ -6,6 +6,8 @@ const cloudConfig = require('./lib/cloud-config');
 
 if (!process.env.CONFIGSERVER_NAME) {
     throw new Error(`Unleash config server name CONFIGSERVER_NAME to start`);
+} else if (process.env.CONFIGSERVER_NAME.indexOf('http') < 0) {
+    process.env.CONFIGSERVER_NAME = `http://${process.env.CONFIGSERVER_NAME}`;
 }
 if (!process.env.CLOUD_CONFIG_USER) {
     throw new Error(`Unleash config user CLOUD_CONFIG_USER to start`);
