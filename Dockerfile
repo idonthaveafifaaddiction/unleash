@@ -35,14 +35,9 @@ COPY --from=build --chown=1000 /usr/src/app /usr/src/app
 # startup file
 COPY --chown=1000 ./run_docker_image.sh /usr/src/app/run_docker_image.sh
 
-# babelrc
-COPY --chown=1000 ./.babelrc /usr/src/app/.babelrc
 
 # Bundle app source
-COPY --chown=1000 ./index.js /usr/src/app/index.js
 COPY --chown=1000 ./src /usr/src/app/src
-
-RUN npm run tsc
 
 USER node
 EXPOSE 3000
