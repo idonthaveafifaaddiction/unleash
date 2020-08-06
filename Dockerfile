@@ -37,7 +37,7 @@ COPY --chown=1000 ./run_docker_image.sh /usr/src/app/run_docker_image.sh
 
 
 # Bundle app source
-COPY --chown=1000 ./src /usr/src/app/src
+COPY --chown=1000 ./ /usr/src/app
 
 USER node
 EXPOSE 3000
