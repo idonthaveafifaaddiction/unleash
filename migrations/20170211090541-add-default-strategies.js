@@ -9,16 +9,18 @@ function insertStrategySQL(strategy) {
         SELECT '${strategy.name}', '${strategy.description}', '${JSON.stringify(
         strategy.parameters,
     )}', 1
-        WHERE
+        from strategies WHERE
             NOT EXISTS (
                 SELECT name FROM strategies WHERE name = '${strategy.name}'
-        );`;
+        ) ON DUPLICATE KEY UPDATE description='${strategy.description}',
+                        parameters = '${JSON.stringify(strategy.parameters)}';`;
 }
 
 function insertEventsSQL(strategy) {
     return `
         INSERT INTO events (type, created_by, data)
         SELECT 'strategy-created', 'migration', '${JSON.stringify(strategy)}'
+        from strategies
         WHERE
             NOT EXISTS (
                 SELECT name FROM strategies WHERE name = '${strategy.name}'
