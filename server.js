@@ -3,6 +3,7 @@
 const cloudClient = require('cloud-config-client');
 const unleash = require('./lib/server-impl');
 const cloudConfig = require('./lib/cloud-config');
+const enableCopartOauth = require('./lib/auth/copart-auth-hook');
 
 if (!process.env.CONFIGSERVER_NAME) {
     throw new Error(`Unleash config server name CONFIGSERVER_NAME to start`);
@@ -34,5 +35,8 @@ const configParams = {
 };
 cloudClient.load(configParams).then(config => {
     config.forEach((key, value) => cloudConfig.setAppConfigKey(key, value));
-    unleash.start();
+    unleash.start({
+        adminAuthentication: 'custom',
+        preRouterHook: enableCopartOauth,
+    });
 });
