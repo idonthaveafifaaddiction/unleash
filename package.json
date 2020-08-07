@@ -63,6 +63,7 @@
     ]
   },
   "dependencies": {
+    "@passport-next/passport": "^3.1.0",
     "@passport-next/passport-local": "^1.2.1",
     "async": "^3.1.0",
     "body-parser": "^1.19.0",
@@ -97,7 +98,6 @@
     "yargs": "^15.1.0"
   },
   "devDependencies": {
-    "@passport-next/passport": "^3.1.0",
     "@passport-next/passport-google-oauth2": "^1.0.0",
     "@types/node": "^14.0.0",
     "ava": "^3.7.0",
